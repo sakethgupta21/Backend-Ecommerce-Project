@@ -29,14 +29,10 @@ User.findOne({
             });
             return;
         }
+        next();
     })
 })
 }
-
-
-
-
-
 
 
 checkRolesExisted = (req , res , next)=>{
