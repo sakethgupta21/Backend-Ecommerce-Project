@@ -1,5 +1,5 @@
 //const { expect } = require('parser')
-const { expect } = require('parser');
+//const { expect } = require('parser');
 const MathOperations = require('./sample')
 
 describe("Calculator tests",()=>{
@@ -15,18 +15,18 @@ describe("Calculator tests",()=>{
          expect(MathOperations.sum(5 , 3)).toBe(8) ;
     })
 */
-     test('subraction',()=>{
-    expect(MathOperations.diff(10 , 2)).toBe(12);
-    expect(MathOperations.diff(50 , 8)).toBe(42);
-    expect(MathOperations.diff(50 , 78)).not.toBe(40);
-     })
+    test('subraction',()=>{
+        expect(MathOperations.diff(10 , 2)).toBe(8);
+        expect(MathOperations.diff(50 , 8)).toBe(42);
+        expect(MathOperations.diff(50 , 78)).not.toBe(40);
+    })
 
     
     test('product',()=>{
 
-    expect(MathOperations.product(1 , 2)).toBe(2);
-    expect(MathOperations.product(5 , 8)).not.toBe(45);
-    expect(MathOperations.product(5 , 8)).toBe(40);
+        expect(MathOperations.product(1 , 2)).toBe(2);
+        expect(MathOperations.product(5 , 8)).not.toBe(45);
+        expect(MathOperations.product(5 , 8)).toBe(40);
     })
 
 })
