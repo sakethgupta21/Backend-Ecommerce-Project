@@ -20,7 +20,7 @@ verifyToken = (req , res ,next)=>{
     jwt.verify(token , config.secret , (err, decoded) => {
         //if token provided , but the wrong one.
         if(err){
-            return res.staus(401).send({
+            return res.status(401).send({
                 message: "Unauthorised !"
             });
             

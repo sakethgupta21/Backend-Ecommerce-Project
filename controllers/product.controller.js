@@ -21,7 +21,7 @@ exports.create = (req,res)=>{
     })
     .catch(err => {
         console.log("Issue in Inserting the Product")
-        res.send(500).send("Issue in Creating the products")
+        res.status(500).send("Issue in Creating the products")
     })
 }
 
