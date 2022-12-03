@@ -18,7 +18,7 @@ exports.create = (req,res)=>{
     })
     .catch(err=>{
             console.log("Issue in Inserting the Category")
-            res.send(500).send("Issue in Creating the category")
+            res.status(500).send("Issue in Creating the category")
     })
     
 
@@ -52,7 +52,7 @@ exports.findOne =(req, res)=>{
         
     })
     .catch(err => {
-        res.send(500).send("Error Occured  while finding One of the Elements ")
+        res.status(500).send("Error Occured  while finding One of the Elements ")
     })
 }
 
