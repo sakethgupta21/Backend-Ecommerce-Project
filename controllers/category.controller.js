@@ -27,7 +27,7 @@ exports.create = (req,res)=>{
 //GET: Get the List of all catgories
 exports.findAll=(req,res)=>{
 
-    category.findAll()
+    Category.findAll()
     .then(data=>{
         console.log("category Successfully fetched from the Database")
         res.status(200).send(data)
@@ -41,7 +41,7 @@ exports.findAll=(req,res)=>{
 exports.findOne =(req, res)=>{
     const categoryId = req.params.id
 
-    category.findByPk(categoryId)
+    Category.findByPk(categoryId)
     .then(category =>{
         //If a user sends in a id which is not present in DB
         if(!category){

@@ -1,7 +1,5 @@
-//const { expect } = require("parser");
 const CategoryController = require("../../../controllers/category.controller");
 const Model = require("../../../models");
-const categoryModel = require("../../../models/category.model");
 const CategoryModel = Model.category;
 const newCategory = require("../../mock-data/new-category.json")
 const {mockRequest, mockResponse} = require('../interceptor');
@@ -20,7 +18,7 @@ describe('CategoryController.create', () => {
         req.body = newCategory
     })
 
-    test('should call Category.Create and creates a new category', async () => {
+    test('should call Category.Create and creates a new catrgory', async () => {
 
         //Mock model command
         const spy = jest.spyOn(CategoryModel, 'create')
@@ -44,22 +42,5 @@ describe('CategoryController.create', () => {
          expect(res.status).toHaveBeenCalledWith(500);
          expect(CategoryModel.create).toHaveBeenCalledWith(newCategory)
          expect(res.send).toHaveBeenCalledWith("Issue in creating the category")
-    })
-})
-
-describe('CategoryController.findone',()=>{
-    test('should call CategoryController.findOne',async()=>{
-        
-        req.params = {id : ' 1'}
-
-        const spy = jest.spyOn(CategoryModel, 'findByPk')
-
-        .mockImplementation(()=> Promise.resolve(newCategory))
-
-        await CategoryController.findOne(req.params.id);
-
-        expect(res.status).toHaveBeenCalledWith(200)
-        expect(res.send).toHaveBeenCalledWith(newCategory);
-        expect(CategoryModel.findByPk).toHaveBeenCalledWith(req.params.id);
     })
 })
